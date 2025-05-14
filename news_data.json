@@ -1,0 +1,32 @@
+[
+    {
+      "id": "news001",
+      "source": "api_1",
+      "sentence": "Tech company XYZ announced a breakthrough in quantum computing that could revolutionize cryptography.",
+      "timestamp": "2025-05-08T08:30:15"
+    },
+    {
+      "id": "news002",
+      "source": "api_2",
+      "sentence": "Global markets reacted strongly to the unexpected interest rate decision from the central bank.",
+      "timestamp": "2025-05-08T08:30:20"
+    },
+    {
+      "id": "news003", 
+      "source": "api_1",
+      "sentence": "BREAKING: Unexpected Earthquake reported in India, authorities urge caution.",
+      "timestamp": "2025-05-08T08:30:30"
+    },
+    {
+      "id": "news004",
+      "source": "api_2",
+      "sentence": "Bill Gates visit to Agra to promote his philanthropic efforts.",
+      "timestamp": "2025-05-08T08:30:40"
+    },
+    {
+      "id": "news005",
+      "source": "api_1",
+      "sentence": "India attacks Lahore and destroys Pakistan's air defense system.",
+      "timestamp": "2025-05-08T08:30:50"
+    }
+  ]

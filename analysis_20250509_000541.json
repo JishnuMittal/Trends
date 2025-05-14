@@ -1,0 +1,64 @@
+[
+  {
+    "sentence": "Tech company XYZ announced a breakthrough in quantum computing that could revolutionize cryptography.",
+    "timestamp": "2025-05-09T00:01:15.349145",
+    "keywords": [
+      "quantum computing",
+      "cryptography",
+      "XYZ"
+    ],
+    "anomalies": [],
+    "confidence": 0.0
+  },
+  {
+    "sentence": "Global markets reacted strongly to the unexpected interest rate decision from the central bank.",
+    "timestamp": "2025-05-09T00:02:27.947789",
+    "keywords": [
+      "interest rate decision",
+      "central bank",
+      "global markets"
+    ],
+    "anomalies": [
+      "The interest rate decision from the central bank is unusual in the context of recent news trends, as it deviates from expected market reactions to the XYZ's quantum computing breakthrough. Typically, such a discovery would lead to increased market volatility and potentially even a rate hike. Instead, the central bank's decision suggests a shift in economic priorities or a more cautious approach.",
+      "The global markets' strong reaction to the interest rate decision is unexpected given the recent focus on tech advancements like quantum computing and cryptography. This sudden attention towards traditional economic indicators may indicate a recognition of their continued importance, despite the emergence of new technologies."
+    ],
+    "confidence": 0.8
+  },
+  {
+    "sentence": "BREAKING: Unexpected Earthquake reported in India, authorities urge caution.",
+    "timestamp": "2025-05-09T00:03:32.893578",
+    "keywords": [
+      "Earthquake",
+      "India",
+      "Unexpected"
+    ],
+    "anomalies": [],
+    "confidence": 0.0
+  },
+  {
+    "sentence": "Bill Gates visit to Agra to promote his philanthropic efforts.",
+    "timestamp": "2025-05-09T00:04:42.105973",
+    "keywords": [
+      "BillGates",
+      "Agra",
+      "Philanthropy"
+    ],
+    "anomalies": [
+      "Bill Gates' visit to Agra is anomalous because it doesn't relate to recent news trends (quantum computing, cryptography, interest rate decision, or Earthquake) and lacks any significant connection to India. This unexpected event suggests that Bill Gates may be expanding his philanthropic efforts into a new area.",
+      "The lack of mention of technology (quantum computing, cryptography), global markets, central bank, or recent events (Earthquake) in the news sentence is an anomaly. It implies that Bill Gates' visit is not related to these significant topics and may signal a shift towards more social or cultural philanthropic efforts."
+    ],
+    "confidence": 0.7
+  },
+  {
+    "sentence": "India attacks Lahore and destroys Pakistan's air defense system.",
+    "timestamp": "2025-05-09T00:05:41.902998",
+    "keywords": [
+      "India",
+      "Lahore",
+      "Pakistan",
+      "air defense system"
+    ],
+    "anomalies": [],
+    "confidence": 0.0
+  }
+]
