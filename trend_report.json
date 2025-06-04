@@ -1,12 +1,8 @@
 {
-  "timestamp": "2025-05-12T13:32:26.309922",
+  "timestamp": "2025-06-02T22:48:55.695697",
   "trending_keywords": [
     {
       "keyword": "hamas",
-      "count": 1
-    },
-    {
-      "keyword": "us-israeli",
       "count": 1
     },
     {
@@ -40,175 +36,151 @@
     {
       "keyword": "cooper",
       "count": 1
+    },
+    {
+      "keyword": "thunderstorms",
+      "count": 1
     }
   ],
   "anomalies": [
     {
-      "anomaly": "The presence of Ukraine-Russia talks, initiated by Trump, is an unusual development as it contradicts established patterns of US-Russian relations under President Trump's administration. This anomaly breaks the pattern of tense relations between the two nations.",
+      "anomaly": "The Taliban, a militant Islamic group known for their strict adherence to Islamic law and conservative values, are suspending chess due to gambling concerns. This is an unexpected shift in behavior, as the Taliban has previously been associated with oppressive restrictions on recreational activities.",
       "confidence": 0.9,
       "sources": [
-        "Zelensky challenges Putin to meet him after Trump demands Ukraine-Russia talks"
+        "Taliban suspends chess over gambling concerns"
       ]
     },
     {
-      "anomaly": "The fact that Zelensky, the President of Ukraine, is challenging Putin to meet him after Trump's demand for talks is a significant shift in sentiment and behavior, particularly given the recent focus on Hamas, US-Israeli relations, and Gaza ceasefire efforts. This anomaly highlights a potential new dynamic in global diplomacy.",
+      "anomaly": "Gambling concerns being cited as the reason for suspending chess is unusual, as chess is typically considered a non-competitive, intellectual pursuit that does not involve betting or wagering.",
       "confidence": 0.9,
       "sources": [
-        "Zelensky challenges Putin to meet him after Trump demands Ukraine-Russia talks"
+        "Taliban suspends chess over gambling concerns"
       ]
     },
     {
-      "anomaly": "The news title 'Care worker recruitment from abroad to end, Cooper says' appears anomalous due to its lack of connection to recent keywords (Hamas, US-Israeli, Gaza, ceasefire, Zelensky, Putin, Ukraine-Russia) and news trends. The topic seems unrelated to ongoing global events.",
+      "anomaly": "The Pope, a prominent figure known for his strong stance on morality and social justice, is unusually appealing for an end to war, which is a significant shift in sentiment",
       "confidence": 0.9,
       "sources": [
-        "Care worker recruitment from abroad to end, Cooper says"
+        "Pope Leo appeals for no more war in first Sunday address"
       ]
     },
     {
-      "anomaly": "The decision to end care worker recruitment from abroad appears to be an unusual policy shift, as it's not related to the current global crises or emerging trends.",
+      "anomaly": "The appeal for no more war in the first Sunday address suggests an unexpected emphasis on international relations and conflict resolution",
       "confidence": 0.9,
       "sources": [
-        "Care worker recruitment from abroad to end, Cooper says"
+        "Pope Leo appeals for no more war in first Sunday address"
       ]
     },
     {
-      "anomaly": "The news title 'Tributes paid to teenagers who died in swimming incident in Donegal' lacks any connection to the recent keywords or trends, which are primarily focused on international politics and events.",
-      "confidence": 0.9,
-      "sources": [
-        "Tributes paid to teenagers who died in swimming incident in Donegal"
-      ]
-    },
-    {
-      "anomaly": "The topic of the news title is unrelated to the typical themes covered by the BBC News RSS feed, such as global politics, economic issues, or scientific discoveries.",
-      "confidence": 0.9,
-      "sources": [
-        "Tributes paid to teenagers who died in swimming incident in Donegal"
-      ]
-    },
-    {
-      "anomaly": "The title mentions Alcatraz, a historical prison that was closed in 1963, which is anomalous because it's unexpected to see a news article about reopening an ancient prison.",
+      "anomaly": "Alcatraz's last living inmate is unlikely to be involved in Trump's plan to reopen the prison, as it is a historical site and not a functioning correctional facility.",
       "confidence": 0.9,
       "sources": [
         "One of Alcatraz's last living inmates on Trump's plan to reopen prison"
       ]
     },
     {
-      "anomaly": "Trump's plan to reopen the prison is also surprising as he has not publicly discussed any initiatives to revive old prisons or reform the US criminal justice system.",
+      "anomaly": "The idea of reopening Alcatraz Prison seems contradictory given its notorious history and current status as a popular tourist attraction.",
       "confidence": 0.9,
       "sources": [
         "One of Alcatraz's last living inmates on Trump's plan to reopen prison"
       ]
     },
     {
-      "anomaly": "The release of a US-Israeli hostage by Hamas as part of efforts to reach a Gaza ceasefire is an unusual development, as it contradicts the expected adversarial stance between these entities. Typically, Hamas and Israel have engaged in violent conflicts, with little room for negotiation or prisoner exchange.",
+      "anomaly": "The release of a US-Israeli hostage by Hamas is an unexpected development, as the group's actions are often seen as hostile towards Western interests.",
       "confidence": 0.8,
       "sources": [
         "Hamas to release US-Israeli hostage as part of efforts to reach Gaza ceasefire"
       ]
     },
     {
-      "anomaly": "The involvement of a US citizen in this hostage situation adds another layer of complexity, as it breaks the expectation that most international incidents involving the US are handled bilaterally, without third-party mediation.",
+      "anomaly": "The fact that this release is part of efforts to reach a ceasefire in Gaza suggests a possible shift in Hamas' stance on negotiations and conflict resolution.",
       "confidence": 0.8,
       "sources": [
         "Hamas to release US-Israeli hostage as part of efforts to reach Gaza ceasefire"
       ]
     },
     {
-      "anomaly": "The news title 'Amber Heard announces birth of twins in Mother's Day post' deviates from the recent news trends and keywords, which mainly revolved around international conflicts, political talks, and local events. The sudden shift to celebrity news and personal announcements is unexpected.",
+      "anomaly": "The simultaneous involvement of Trump, Putin, and Zelensky in a meeting demand is unusual as it creates an unexpected triangular relationship between the US President, Russian President, and Ukrainian President.",
+      "confidence": 0.8,
+      "sources": [
+        "Zelensky challenges Putin to meet him after Trump demands Ukraine-Russia talks"
+      ]
+    },
+    {
+      "anomaly": "The fact that Ukraine-Russia talks are being demanded by the US President (Trump) is unusual, as it typically falls under the realm of international diplomacy rather than domestic political demands.",
+      "confidence": 0.8,
+      "sources": [
+        "Zelensky challenges Putin to meet him after Trump demands Ukraine-Russia talks"
+      ]
+    },
+    {
+      "anomaly": "Thunderstorms forecast despite unusually dry spring, which contradicts established weather patterns",
+      "confidence": 0.8,
+      "sources": [
+        "Thunderstorms forecast despite driest spring for decades"
+      ]
+    },
+    {
+      "anomaly": "The combination of a driest spring for decades and subsequent thunderstorm forecasts is an unexpected connection between events",
+      "confidence": 0.8,
+      "sources": [
+        "Thunderstorms forecast despite driest spring for decades"
+      ]
+    },
+    {
+      "anomaly": "The announcement of Amber Heard having twins is unexpected, as she has not publicly spoken about her pregnancy or revealed any hints about having multiple children.",
       "confidence": 0.8,
       "sources": [
         "Amber Heard announces birth of twins in Mother's Day post"
       ]
     },
     {
-      "anomaly": "There is no clear connection between Amber Heard's announcement and any of the recent news trends or keywords. This lack of correlation makes her birth announcement stand out as an anomaly.",
+      "anomaly": "A celebrity announcing the birth of their twins on Mother's Day is an unusual occurrence, as it may be perceived as self-promotional rather than a genuine celebration of motherhood.",
       "confidence": 0.8,
       "sources": [
         "Amber Heard announces birth of twins in Mother's Day post"
       ]
     },
     {
-      "anomaly": "The news title does not contain any recent keywords, such as 'Hamas', 'US-Israeli', or 'Amber Heard', which is unusual considering the recent trends and news stories.",
+      "anomaly": "The phrase 'mourning loss of career' suggests a strong negative emotional tone, which is unusual in a news title and may indicate a personal or human-interest story rather than a typical news article.",
       "confidence": 0.8,
       "sources": [
         "Wrongly accused nurse 'mourning loss of career'"
       ]
     },
     {
-      "anomaly": "The topic of a wrongly accused nurse's loss of career deviates from the usual themes of care worker recruitment, swimming incidents, twins, and Mother's Day, making it an unexpected connection in the context of recent news.",
+      "anomaly": "The focus on a wrongly accused individual is unexpected, as most news stories about nurses would be related to their work or professional development rather than personal issues.",
       "confidence": 0.8,
       "sources": [
         "Wrongly accused nurse 'mourning loss of career'"
       ]
     },
     {
-      "anomaly": "The Pope's appeal for no more war in a Sunday address is anomalous because it contradicts established patterns of religious leaders being neutral or silent on global political issues. This unexpected shift in sentiment could signal a significant change in the Vatican's approach to international conflicts.",
+      "anomaly": "The unexpected combination of Eurovision and Final Destination in the same news title is unusual, as these are two distinct and unrelated topics. This connection may indicate a unique event or crossover that requires further analysis.",
       "confidence": 0.8,
       "sources": [
-        "Pope Leo appeals for no more war in first Sunday address"
+        "Eurovision is here, and Final Destination returns: What's coming up this week"
       ]
     },
     {
-      "anomaly": "The topic of war and peace in a Pope's Sunday address also breaks away from recent news trends focused on celebrity births, career setbacks, and entertainment events. This sudden shift in focus could indicate a growing concern about global conflict resolution.",
+      "anomaly": "The inclusion of 'What's coming up this week' in the title suggests that the article may not be focused solely on Eurovision or Final Destination, but rather provide a broader look at upcoming events. This deviation from traditional news titles is unexpected and warrants investigation.",
       "confidence": 0.8,
       "sources": [
-        "Pope Leo appeals for no more war in first Sunday address"
+        "Eurovision is here, and Final Destination returns: What's coming up this week"
       ]
     },
     {
-      "anomaly": "The news title 'Perpetual honeymoon' for stranded cruise ship couple married at sea is anomalous because it does not fit the recent trend of serious and somber news titles. The use of romantic and positive language in a time when most news is focused on conflicts, abductions, and wars stands out as unusual.",
+      "anomaly": "The phrase 'perpetual honeymoon' is an unexpected and unusual way to describe a romantic experience, especially in the context of a stranded cruise ship.",
       "confidence": 0.8,
       "sources": [
         "'Perpetual honeymoon' for stranded cruise ship couple married at sea"
       ]
     },
     {
-      "anomaly": "There is no clear connection between this news title and the recent keywords or trends, making it an unexpected anomaly that breaks the pattern of typical news stories.",
+      "anomaly": "The fact that the couple got married at sea is an extraordinary event that contradicts common expectations and patterns.",
       "confidence": 0.8,
       "sources": [
         "'Perpetual honeymoon' for stranded cruise ship couple married at sea"
-      ]
-    },
-    {
-      "anomaly": "Thunderstorms forecast despite driest spring for decades is anomalous because it contradicts the expected weather pattern of a dry spring, which was previously forecasted. This unexpected turn in weather forecasts may indicate a shift in global climate patterns or a localized weather phenomenon.",
-      "confidence": 0.7,
-      "sources": [
-        "Thunderstorms forecast despite driest spring for decades"
-      ]
-    },
-    {
-      "anomaly": "The forecast of thunderstorms amidst the driest spring on record is also unusual as it does not align with recent news trends focusing on conflict and politics (Hamas-US-Israeli hostage, Zelensky-Putin talks). The sudden change in focus from political conflicts to severe weather events may signal a shift in public attention or a potential impact of weather events on global affairs.",
-      "confidence": 0.7,
-      "sources": [
-        "Thunderstorms forecast despite driest spring for decades"
-      ]
-    },
-    {
-      "anomaly": "The news title 'Woman charged with attempted abduction of baby' is anomalous because it deviates from the recent trends and keywords focused on recruitment, swimming accidents, celebrity births, and medical professionals. The sudden shift to a serious crime story indicates a break in sentiment and pattern.",
-      "confidence": 0.7,
-      "sources": [
-        "Woman charged with attempted abduction of baby"
-      ]
-    },
-    {
-      "anomaly": "No direct connections are found between this news story and the recent trends or keywords, making it an unexpected outlier. This anomaly could signal the start of a new trend or pattern.",
-      "confidence": 0.7,
-      "sources": [
-        "Woman charged with attempted abduction of baby"
-      ]
-    },
-    {
-      "anomaly": "Eurovision being mentioned in the same news title as Final Destination, which appears to be a popular movie franchise, is an anomaly due to the lack of connection between Eurovision and the recent keywords or trends. This suggests that there might be an attempt to create an unexpected link between two seemingly unrelated topics.",
-      "confidence": 0.7,
-      "sources": [
-        "Eurovision is here, and Final Destination returns: What's coming up this week"
-      ]
-    },
-    {
-      "anomaly": "The mention of 'What's coming up this week' in the news title is also anomalous as it does not follow a typical pattern of listing recent news stories or providing context for the related articles. It seems out of place and could signal that the news outlet is trying to highlight upcoming events or changes in tone.",
-      "confidence": 0.7,
-      "sources": [
-        "Eurovision is here, and Final Destination returns: What's coming up this week"
       ]
     }
   ],

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Trend Analyzer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --success-color: #2ecc71;
+            --warning-color: #f1c40f;
+            --danger-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--primary-color);
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+        }
+
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-header {
+            border-radius: 10px 10px 0 0 !important;
+            font-weight: 600;
+        }
+
+        .trending-keyword {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .keyword-bar {
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 4px;
+            margin-top: 5px;
+        }
+
+        .anomaly-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            background: white;
+        }
+
+        .confidence-bar {
+            height: 6px;
+            border-radius: 3px;
+            margin-top: 8px;
+        }
+
+        .confidence-high { background-color: var(--danger-color); }
+        .confidence-medium { background-color: var(--warning-color); }
+        .confidence-low { background-color: var(--success-color); }
+
+        .news-source {
+            padding: 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            background: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .news-source i {
+            color: var(--accent-color);
+        }
+
+        .news-source a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .news-source a:hover {
+            color: var(--accent-color);
+        }
+
+        .stats-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stats-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .refresh-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border: none;
+            transition: transform 0.2s;
+        }
+
+        .refresh-button:hover {
+            transform: rotate(180deg);
+        }
+
+        .loading {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        #last-update {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark mb-4">
+        <div class="container">
+            <span class="navbar-brand mb-0 h1">
+                <i class="bi bi-graph-up"></i> News Trend Analyzer
+            </span>
+            <span class="text-light">
+                <i class="bi bi-cpu"></i> Model: <span id="model-name">Loading...</span>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Stats Row -->
+        <div class="row mb-4">
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number" id="total-sources">0</div>
+                    <div class="text-muted">News Sources</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number" id="total-keywords">0</div>
+                    <div class="text-muted">Trending Keywords</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number" id="total-anomalies">0</div>
+                    <div class="text-muted">Detected Anomalies</div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card stats-card">
+                    <div class="stats-number" id="total-articles">0</div>
+                    <div class="text-muted">Articles Analyzed</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Trending Keywords -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <i class="bi bi-graph-up"></i> Trending Keywords
+                    </div>
+                    <div class="card-body">
+                        <div id="trending-keywords">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detected Anomalies -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-warning">
+                        <i class="bi bi-exclamation-triangle"></i> Detected Anomalies
+                    </div>
+                    <div class="card-body">
+                        <div id="detected-anomalies">Loading...</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- News Sources -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <i class="bi bi-link-45deg"></i> News Sources
+                    </div>
+                    <div class="card-body">
+                        <div id="news-sources">Loading...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p id="last-update" class="text-center">Last updated: <span id="update-time">Never</span></p>
+    </div>
+
+    <!-- Refresh Button -->
+    <button class="refresh-button" id="refresh" title="Refresh Data">
+        <i class="bi bi-arrow-clockwise"></i>
+    </button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize
+            fetchData();
+            
+            // Setup refresh button
+            document.getElementById('refresh').addEventListener('click', function() {
+                this.querySelector('i').classList.add('loading');
+                fetchData().then(() => {
+                    this.querySelector('i').classList.remove('loading');
+                });
+            });
+            
+            // Auto-refresh every 30 seconds
+            setInterval(fetchData, 30000);
+            
+            function fetchData() {
+                return Promise.all([
+                    fetch('/api/info').then(response => response.json()),
+                    fetch('/api/recent').then(response => response.json()),
+                    fetch('/api/trends').then(response => response.json())
+                ]).then(([info, recent, trends]) => {
+                    // Update model info
+                    document.getElementById('model-name').textContent = info.model;
+                    
+                    // Update stats
+                    const uniqueSources = new Set(recent.map(item => item.source));
+                    document.getElementById('total-sources').textContent = uniqueSources.size;
+                    document.getElementById('total-keywords').textContent = trends.trending_keywords?.length || 0;
+                    document.getElementById('total-anomalies').textContent = trends.anomalies?.length || 0;
+                    document.getElementById('total-articles').textContent = recent.length;
+                    
+                    // Update trending keywords
+                    const trendingKeywords = document.getElementById('trending-keywords');
+                    trendingKeywords.innerHTML = '';
+                    
+                    if (!trends.trending_keywords || trends.trending_keywords.length === 0) {
+                        trendingKeywords.innerHTML = '<p>No trending keywords available</p>';
+                    } else {
+                        const maxCount = Math.max(...trends.trending_keywords.map(k => k.count));
+                        trends.trending_keywords.forEach(keyword => {
+                            const percent = (keyword.count / maxCount) * 100;
+                            const div = document.createElement('div');
+                            div.className = 'trending-keyword';
+                            div.innerHTML = `
+                                <div class="w-100">
+                                    <div class="d-flex justify-content-between">
+                                        <strong>${keyword.keyword}</strong>
+                                        <span class="badge bg-primary">${keyword.count}</span>
+                                    </div>
+                                    <div class="keyword-bar" style="width: ${percent}%"></div>
+                                </div>
+                            `;
+                            trendingKeywords.appendChild(div);
+                        });
+                    }
+                    
+                    // Update anomalies
+                    const detectedAnomalies = document.getElementById('detected-anomalies');
+                    detectedAnomalies.innerHTML = '';
+                    
+                    if (!trends.anomalies || trends.anomalies.length === 0) {
+                        detectedAnomalies.innerHTML = '<p>No anomalies detected</p>';
+                    } else {
+                        trends.anomalies.forEach(anomaly => {
+                            let confidenceClass = 'confidence-low';
+                            if (anomaly.confidence > 0.7) {
+                                confidenceClass = 'confidence-high';
+                            } else if (anomaly.confidence > 0.4) {
+                                confidenceClass = 'confidence-medium';
+                            }
+                            
+                            const div = document.createElement('div');
+                            div.className = 'anomaly-item';
+                            div.innerHTML = `
+                                <div><strong>${anomaly.anomaly}</strong></div>
+                                <div class="text-muted">Confidence: ${(anomaly.confidence * 100).toFixed(0)}%</div>
+                                <div class="confidence-bar ${confidenceClass}" style="width: ${anomaly.confidence * 100}%"></div>
+                                ${anomaly.sources ? `
+                                    <div class="source-text mt-2">
+                                        <small class="text-muted">Source: ${anomaly.sources[0]}</small>
+                                    </div>
+                                ` : ''}
+                            `;
+                            detectedAnomalies.appendChild(div);
+                        });
+                    }
+                    
+                    // Update news sources
+                    const newsSources = document.getElementById('news-sources');
+                    newsSources.innerHTML = '';
+                    
+                    const sources = new Set();
+                    recent.forEach(item => {
+                        if (item.source) sources.add(item.source);
+                    });
+                    
+                    if (sources.size === 0) {
+                        newsSources.innerHTML = '<p>No sources available</p>';
+                    } else {
+                        sources.forEach(source => {
+                            const div = document.createElement('div');
+                            div.className = 'news-source';
+                            div.innerHTML = `
+                                <i class="bi bi-link-45deg"></i>
+                                <a href="${source}" target="_blank" rel="noopener noreferrer">
+                                    ${new URL(source).hostname.replace('www.', '')}
+                                </a>
+                            `;
+                            newsSources.appendChild(div);
+                        });
+                    }
+                    
+                    // Update timestamp
+                    document.getElementById('update-time').textContent = new Date().toLocaleString();
+                }).catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+            }
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html> 
